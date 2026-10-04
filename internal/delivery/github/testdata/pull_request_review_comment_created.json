@@ -1,0 +1,13 @@
+{
+  "action": "created",
+  "comment": {
+    "id": 5150,
+    "path": "internal/adapters/clients/telegram/client.go",
+    "body": "Тут лучше `errors.As`, чтобы достать RetryAfter.",
+    "user": {"login": "bob-reviewer", "id": 3},
+    "html_url": "https://github.com/katshuuu/pr-pigeon/pull/7#discussion_r5150"
+  },
+  "pull_request": {"id": 2045, "number": 7, "state": "open", "title": "Retry Telegram sends on 429", "html_url": "https://github.com/katshuuu/pr-pigeon/pull/7", "merged": false, "user": {"login": "alice-dev", "id": 1}, "assignees": [{"login": "katshuuu", "id": 2}], "requested_reviewers": [{"login": "bob-reviewer", "id": 3}]},
+  "repository": {"id": 871234, "name": "pr-pigeon", "full_name": "katshuuu/pr-pigeon", "private": false, "html_url": "https://github.com/katshuuu/pr-pigeon"},
+  "sender": {"login": "bob-reviewer", "id": 3}
+}

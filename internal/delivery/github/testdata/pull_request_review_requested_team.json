@@ -1,0 +1,8 @@
+{
+  "action": "review_requested",
+  "number": 7,
+  "pull_request": {"id": 2045, "number": 7, "state": "open", "title": "Retry Telegram sends on 429", "html_url": "https://github.com/katshuuu/pr-pigeon/pull/7", "merged": false, "user": {"login": "alice-dev", "id": 1}, "assignees": [{"login": "katshuuu", "id": 2}], "requested_reviewers": [{"login": "bob-reviewer", "id": 3}]},
+  "requested_team": {"name": "backend", "slug": "backend"},
+  "repository": {"id": 871234, "name": "pr-pigeon", "full_name": "katshuuu/pr-pigeon", "private": false, "html_url": "https://github.com/katshuuu/pr-pigeon"},
+  "sender": {"login": "alice-dev", "id": 1}
+}
