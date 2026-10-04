@@ -1,0 +1,7 @@
+.git
+.github
+bin
+certs
+.env
+coverage.out
+*.md

@@ -1,0 +1,39 @@
+services:
+  pigeon:
+    build:
+      context: .
+      dockerfile: build/package/Dockerfile
+      args:
+        VERSION: ${VERSION:-dev}
+    env_file: .env
+    environment:
+      PORT: ":8443"
+      TLS_CERT_FILE: /certs/server.crt
+      TLS_KEY_FILE: /certs/server.key
+      DB_HOST: postgres
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./certs:/certs:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME:-pigeon}
+      POSTGRES_USER: ${DB_USERNAME:-pigeon}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-pigeon}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  pgdata:
